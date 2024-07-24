@@ -14,9 +14,16 @@ let final_res
 async function getApi(Url){
     let res=await fetch(Url)
     final_res=await res.json()
-    var cartona=""
-    var rate
+    let cartona=""
+    let rate
+    let title
     for(i=1;i<final_res.results.length;i++){
+        if (final_res.results[i].title==undefined){
+            title=final_res.results[i].name
+        }
+        else{
+            title=final_res.results[i].title
+        }
         rate=final_res.results[i].vote_average
         cartona+=
         `
@@ -27,7 +34,7 @@ async function getApi(Url){
                         <img src="https://image.tmdb.org/t/p/w500${final_res.results[i].poster_path}" class="img-fluid" alt="">
                             <div class="overlay text-white position-absolute">
                                 <div class="desc">
-                                    <h2>${final_res.results[i].title}</h2>
+                                    <h2>${title}</h2>
                                     <p>${final_res.results[i].overview}</p>
                                     <p>Release date: ${final_res.results[i].release_date}</p>
                                     <div class="rate rounded-circle">${Number(rate.toFixed(1))}</div>
@@ -47,9 +54,16 @@ function search(input){
     if (!final_res) return;
     let cartona=""
     let rate
+    let title
     for(i=1;i<final_res.results.length;i++){
+        if (final_res.results[i].title==undefined){
+            title=final_res.results[i].name
+        }
+        else{
+            title=final_res.results[i].title
+        }
         rate=final_res.results[i].vote_average
-        if(final_res.results[i].title.toLowerCase().includes(input)){
+        if(title.toLowerCase().includes(input.toLowerCase())){
             cartona+=
             `
             <div class="col-xl-4 col-sm-12 col-md-6">
@@ -59,7 +73,7 @@ function search(input){
                             <img src="https://image.tmdb.org/t/p/w500${final_res.results[i].poster_path}" class="img-fluid" alt="">
                                 <div class="overlay text-white position-absolute">
                                     <div class="desc">
-                                        <h2>${final_res.results[i].title}</h2>
+                                        <h2>${title}</h2>
                                         <p>${final_res.results[i].overview}</p>
                                         <p>Release date: ${final_res.results[i].release_date}</p>
                                         <div class="rate rounded-circle">${Number(rate.toFixed(1))}</div>
