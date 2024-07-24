@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie app</title>
+    <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+    <div class="main d-flex">
+        <!----------------------------- start navbar-------------------->
+        <nav class="main-nav position-fixed vh-100 navbar  bg-white d-flex flex-column justify-content-between py-4">
+            <div class="logo">
+                <img src="./images/logo.png" alt="" class="img-fluid">
+            </div>
+            <div class="nav-toggler">
+                <i class="fa-solid fa-bars fa-xl" style="color: #212529;"></i>
+            </div>
+            <div class="d-flex flex-column gap-2 mb-2">
+                <i class="fa-solid fa-globe" style="color: #212529;"></i>
+                <i class="fa-solid fa-share-nodes" style="color: #212529;"></i>
+            </div>
+        </nav>
+        <div class="togle-nav position-fixed  vh-100 d-none">
+            <div class="nav-list">
+                <ul>
+                    <a href="#" class="nav-item nowPlaying-item"><li>now playing</li></a>
+                    <a href="#" class="nav-item popular-item"><li>Popular</li></a>
+                    <a href="#" class="nav-item topRated-item"><li>Top Rated</li></a>
+                    <a href="#" class="nav-item trending-item"><li>Trending</li></a>
+                    <a href="#" class="nav-item upcomming-item"><li>Upcomming</li></a>
+                    <a href="#contact-us" class="nav-item contactUs-item"><li>Contact Us</li></a>
+                </ul>
+                <div class="nav-end">
+                    <div class="social-media d-flex gap-3 w-50 ms-3">
+                        <i class="fa-brands fa-facebook-f" style="color: #fff;"></i>
+                        <i class="fa-brands fa-twitter" style="color: #fff;"></i>
+                        <i class="fa-solid fa-globe" style="color: #fff;"></i>
+                    </div>
+                    <p class="copy-right mt-4">Copyright © 2022 All Rights Reserved. <br/> Created by <a href="https://github.com/tasneemHosny?tab=repositories" class="text-danger"> Tasneem Hosny</a> </p>
+                </div>
+            </div>
+            <nav class="vh-100 navbar bg-white d-flex flex-column justify-content-between py-4">
+                <div class="logo">
+                    <img src="./images/logo.png" alt="" class="img-fluid">
+                </div>
+                <div class="nav-close">
+                    <i class="fa-solid fa-xmark fa-xl" style="color: #212529;"></i>
+                </div>
+                <div class="d-flex flex-column gap-2 mb-2">
+                    <i class="fa-solid fa-globe" style="color: #212529;"></i>
+                    <i class="fa-solid fa-share-nodes" style="color: #212529;"></i>
+                </div>
+            </nav>
+        </div>
+        <!---------------end navbar------------------------>
+        <!---------------start Home------------------------>
+        <div class="container home py-5" id="playing-now">
+            <div class="form-outline" data-mdb-input-init>
+                <input type="search" id="form1" class="form-control search w-50 m-auto rounded-5 border-3 border-white bg-black" placeholder="search" aria-label="Search" />
+            </div>
+            <div class="row g-5 my-3 playing-now">
+            </div>
+            <!---------------start contact us------------------------>
+            <form id="contact-us" action="index.html" method="post">
+                <h2 class="text-white mt-5">Contact US</h2>
+                <div class="contact-us row gx-3 my-3 ">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="inner p-2">
+                            <input type="text" name="name" class="form-control contact-item name" placeholder="Enter Your Name">
+                            <p class="text-danger name-warning d-none">Invalid name , only characters allowed</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="inner p-2">
+                            <input type="email" name="email" class="form-control contact-item email" placeholder="Enter Your Email">
+                            <p class="text-danger email-warning d-none">Invalid Email, try example@domain.com</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="inner p-2">
+                            <input type="tel" name="phone" class="form-control contact-item phone" placeholder="Enter Your Phone">
+                            <p class="text-danger phone-warning d-none">Invalid Phone Number</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="inner p-2">
+                            <input type="number" name="age" class="form-control contact-item age" placeholder="Enter Your Age">
+                            <p class="text-danger age-warning d-none">Invalid age , age must be +16</p>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="inner p-2">
+                            <input type="password" name="password" class="form-control contact-item password" placeholder="Enter Your Password">
+                            <p class="text-danger password-warning d-none">password must contain numbers & letters at least 8 character</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="inner p-2">
+                            <input type="password" name="re-password" class="form-control contact-item re-password" placeholder="ReEnter Password">
+                            <p class="text-danger re-password-warning d-none">password not match</p>
+                        </div>
+                    </div>
+                    <button class="btn py-2 mt-3" type="Submit">Submit</button>
+            </div>
+            </form>
+            <div id="arrow" class="hidden">
+                <div id="scrollToTop" class="scroll-to-top"><i class="fa-solid fa-arrow-up" style="color: #fff;"></i></div>
+            </div>        </div>
+        <!---------------end Home------------------------>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
